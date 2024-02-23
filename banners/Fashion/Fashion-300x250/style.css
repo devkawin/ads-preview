@@ -1,0 +1,40 @@
+body, body *{margin:0; font-family:sans-serif;}
+#container{ box-sizing: border-box; width: 300px; height: 250px; border: solid 1px #000; cursor: pointer; position: relative; top: 0; left: 0; background: #fff; display: none; opacity: 0; overflow: hidden; } 
+.pos{position: absolute;}
+.pos_hori{left: 0; right:0; margin: 0 auto;}
+.pos_vert{top: 0; bottom:0; margin: auto 0;}
+.content_center{
+transform: translate(-50%, -50%);                   
+    -ms-transform: translate(-50%, -50%);             
+    -webkit-transform: translate(-50%, -50%);          
+    top: 50%;            
+    left: 50%;               
+    text-align: center;             
+    position: relative;     
+}     
+.bgimgparents{width: 100%;height: 100%;top: 0;}      
+#bgimgparent{width: 100%;height: 100%;top: 0;}             
+.imgparents{width: 100%;height: 100%;top: 0;left: 0;}
+#imgparent{width: 100%;height: 100%;top: 0;left: 0;} 
+.bgimgs{height: 100%;width: auto;}  
+#bgimg{height: 100%;width: auto;}  
+#logoparent{height: 34px;width: 124px;top: 10px;}      
+#logoimgparent{height: 100%;width: 100%;}   
+#logoimg{max-width: 100%;max-height: 100%;}     
+#line{height: 1px;width: 100px;top: 148px;background-color: #fff;}  
+#copyparent1{height: 50px;width: 140px;top: 56px;}          
+#copyparent2 {height: 30px;width: 140px;top: 160px;}  
+#copytxtparent{}
+#copytxt11{}
+#copytxt12{top: 12px;}
+#copytxt13{top: -12px;}
+#copytxt14{top: -38px;}
+#leftsec{height: 250px;width: 180px;left: 0;top: 0;background-color: #000;position: relative;overflow: hidden;}
+#rightsec{height: 250px;width: 120px;right: 0;top: 0;overflow: hidden;}
+.copytxts1{top: 40px;font-size: 24px;font-weight: bold;}
+#copytxt1{font-size: 22px;} 
+#copytxt2{font-size: 12px;font-weight: bold;}   
+#copytxt3, #copytxt5{} 
+#ctaparent{height: 30px;width: 120px;bottom: 16px;}
+#ctatxtparent{height: 80%;width: 90%;top: 3px;} 
+#ctatxt{font-size: 14px;font-weight: bold;}
