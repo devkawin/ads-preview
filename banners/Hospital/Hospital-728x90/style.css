@@ -1,0 +1,43 @@
+body, body *{margin:0; font-family:sans-serif;}
+#container{ box-sizing: border-box; width: 728px; height: 90px; border: solid 1px #000; cursor: pointer; position: relative; top: 0; left: 0; background: #fff; display: none; opacity: 0; overflow: hidden; } 
+.pos{position: absolute;}
+.pos_hori{left: 0; right:0; margin: 0 auto;}
+.pos_vert{top: 0; bottom:0; margin: auto 0;}
+.content_center{
+transform: translate(-50%, -50%);                    
+    -ms-transform: translate(-50%, -50%);             
+    -webkit-transform: translate(-50%, -50%);          
+    top: 50%;          
+    left: 50%;         
+    text-align: center;               
+    position: relative;   
+}      
+    
+#intro{width: 100%; height:100%;}   
+.frames{width: 78%; height:100%;top: 0;left: 0;}      
+.bgimgparents{width: 100%;height: 100%;bottom: 0;}      
+.imgparents{width: 100%;height: 100%;}   
+#bgimgparent1{}   
+.bgimgs{height: auto;width: 100%;transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -20%);top: 20%;left: 50%;}   
+.frcopies{top: 62px;left: 0;} 
+#bgimgparent{height: 100%;width: 100%;/*! background: rgba(36, 33, 33, 0.5); */}
+#imgparent{} 
+#bgimg{height: auto;width: 100%;}  
+#copyparent5 {left: -14px;}
+#copyparent4 {left: 6px;}
+#logoparent{height: 130px;width: 150px;top: 0;left: 0;right: 0;bottom: 0;margin: auto;}      
+#logoimgparent{height: 100%;width: 100%;}  
+#logoimg{max-width: 100%;max-height: 100%;}     
+#copyparent1{height: 50px;width: 275px;top: 26px;} 
+#copyparent2 {height: 40px;width: 280px;left: 290px;}
+#copyparent6{height: 74px;width: 270px;left: 20px;}
+.copyparents{width: 220px;}
+.copytxts{font-size: 14px;line-height: 1.3;float: left;display: inline-block;padding: 6px;background-color: #fff;}
+#copytxt1{font-size: 18px;padding: 6px;background-color: #148BCB;}
+#copytxt2{font-size: 14px;padding: 6px;font-weight: bold;}
+#copytxt3, #copytxt5{background-color: #148BCB;}
+#copytxt4{background-color: #9AC83D;}
+#ctaparent{height: 34px;width: 194px;border-radius: 7px;right: 200px;}
+#ctatxtparent{height: 80%;width: 90%;top: 3px;} 
+#ctatxt{font-size: 14px;}
+#end{height: 100%;width: 100%;top: 0;left: 0;}

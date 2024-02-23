@@ -1,0 +1,42 @@
+body, body *{margin:0; font-family:sans-serif;}
+#container{ box-sizing: border-box; width: 300px; height: 250px; border: solid 1px #000; cursor: pointer; position: relative; top: 0; left: 0; background: #fff; display: none; opacity: 0; overflow: hidden; } 
+.pos{position: absolute;}
+.pos_hori{left: 0; right:0; margin: 0 auto;}
+.pos_vert{top: 0; bottom:0; margin: auto 0;}
+.content_center{
+transform: translate(-50%, -50%);                   
+    -ms-transform: translate(-50%, -50%);             
+    -webkit-transform: translate(-50%, -50%);          
+    top: 50%;          
+    left: 50%;         
+    text-align: center;             
+    position: relative;  
+}    
+
+#intro{width: 100%; height:100%;}
+.frames{width: 100%; height:100%;top: 0;left: 0;}        
+.bgimgparents{width: 100%;height: 100%;}   
+.imgparents{width: 100%;height: 100%;}       
+#bgimgparent1{}         
+.bgimgs{height: 100%;width: auto;}               
+#bgimg{}  
+#logoparent{height: 40px;width: 130px;left: 0;right: 0;margin: 0 auto;top: 16px;}      
+#logoimgparent{height: 100%;width: 100%;}   
+#logoimg{max-width: 100%;max-height: 100%;}        
+#copyparent1{height: 80px;width: 162px;top: 100px;left: 10px;}       
+#copyparent2 {height: 80px;width: 130px;top: 170px;left: 26px;}    
+#copyparent6{top: 80px;height: 104px;width: 170px;left: 20px;}  
+.copyparents{bottom: 10px;width: 100%;height: 30px;}
+.framecopyparents{bottom: 10px;width: 100%;height: 30px;background-color: #FF813C;}
+.copytxts{font-size: 20px;line-height: 1.3;float: left;display: inline-block;letter-spacing: 3px;text-shadow: 2px 2px 8px #DD6D30;font-weight: bold;}
+.framecopytxts{line-height: 1.3;float: left;display: inline-block;letter-spacing: 3px;text-shadow: 2px 2px 8px #DD6D30;font-weight: bold;font-size: 22px;}
+#copytxt1{font-size: 20px;}
+#copytxt2{font-size: 54px;font-weight: bold;}
+#copytxt3, #copytxt5{}
+#copytxt4{}
+#ctaparent{height: 34px;width: 130px;bottom: 10px;border-radius: 30px;}
+#ctatxtparent{height: 80%;width: 90%;top: 3px;} 
+#ctatxt{font-size: 14px;font-weight: bold;}
+#end{height: 100%;width: 100%;top: 0;left: 0;}
+#promoparent{bottom: 20px;height: 90px;width: 90px;background-color: #FF813C;border: 1px solid #716FD5;border-radius: 50% 0;right: 20px;}
+#promocopy{height: 60px;width: 60px;font-size: 18px;text-shadow: 2px 2px 8px #2B3B9E;}
