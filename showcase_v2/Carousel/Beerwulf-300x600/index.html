@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+   <meta name="ad.size" content="width=300,height=600">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+   <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+   <script type="text/javascript"
+      src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.5_23b0de6da0ee295131e32a500470610c_min.js"></script>
+   <style>
+      /*---- global ----*/
+
+      @font-face {
+         font-family: 'Lato';
+         src: url('Lato-Regular.woff2') format('woff2'),
+            url('Lato-Regular.woff') format('woff');
+         font-weight: normal;
+         font-style: normal;
+         font-display: swap;
+      }
+
+      @font-face {
+         font-family: 'Lato';
+         src: url('Lato-Italic.woff2') format('woff2'),
+            url('Lato-Italic.woff') format('woff');
+         font-weight: normal;
+         font-style: italic;
+         font-display: swap;
+      }
+
+      @font-face {
+         font-family: 'Teko';
+         src: url('Teko-Bold.woff2') format('woff2'),
+            url('Teko-Bold.woff') format('woff');
+         font-weight: bold;
+         font-style: normal;
+         font-display: swap;
+      }
+
+
+      * {
+         border: 0;
+         margin: 0;
+         padding: 0;
+      }
+
+      #stage {
+         width: 300px;
+         height: 600px;
+         position: absolute;
+         margin: auto;
+         left: 0px;
+         right: 0px;
+         top: 0px;
+         bottom: 0px;
+         overflow: hidden;
+         -o-text-overflow: clip;
+         text-overflow: clip;
+         opacity: 1;
+         cursor: pointer;
+         background: #739340;
+         font-family: 'Teko', Arial, Helvetica, sans-serif;
+      }
+
+      .border {
+         position: absolute;
+         top: 0;
+         left: 0;
+         border: 1px solid #000;
+         -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+         width: 100%;
+         height: 100%;
+         pointer-events: none;
+         opacity: 0.1;
+      }
+
+      .full {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+      }
+      /*---- ad layout ----*/
+
+      .flow {
+         top: 0px;
+         height: 678px;
+         /* top: -639px; */
+      }
+
+      .logo {
+         position: absolute;
+         width: 120px;
+         left: 90px;
+         top: 290px;
+      }
+
+      .text-container {
+         padding: 0px 20px;
+         position: relative;
+         top: 75px;
+         display: table;
+         height: 400px;
+      }
+
+      .text-1 {
+         display: table-cell;
+         width: 600px;
+         text-align: center;
+         vertical-align: top;
+         font-size: 26px;
+         line-height: 200%;
+      }
+
+      .text-legal {
+         position: absolute;
+         width: 280px;
+         bottom: 0px;
+         padding: 10px;
+         color: #ffffff;
+         font-size: 8px;
+         font-family: Lato, Arial, Helvetica, sans-serif;
+      }
+
+      mark {
+         display: inline;
+         padding: 5px 0px 0px 0px;
+         background-color: #ffffff;
+         -webkit-box-shadow: 10px 0 0 #ffffff, -10px 0 0 #ffffff;
+         box-shadow: 10px 0 0 #ffffff, -10px 0 0 #ffffff;
+         line-height: 52px;
+         font-size: 26px;
+         text-transform: uppercase;
+      }
+
+      .gradient-overlay {
+         position: absolute;
+         bottom: 0px;
+         left: 0px;
+         width: 100%;
+         height: 40px;
+         background: rgb(0, 0, 0);
+         background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7539390756302521) 100%);
+         background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7539390756302521) 100%);
+         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7539390756302521) 100%);
+         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
+         opacity: 0.5;
+      }
+
+      .product-slider {
+         left: 60px;
+         top: 250px;
+         position: absolute;
+      }
+
+      .product-container {
+         width: 180px;
+         height: 260px;
+         position: relative;
+         float: left;
+      }
+
+      .product-container .product {
+         width: 100%;
+         height: 100%;
+         -o-object-fit: contain;
+         object-fit: contain;
+         -o-object-position: 50% 50%;
+         object-position: 50% 50%;
+      }
+
+      .product-container .korting {
+         background: #A31118;
+         position: absolute;
+         right: 0px;
+         top: -10px;
+         font-size: 22px;
+         line-height: 100%;
+         padding: 5px 5px 0px 5px;
+         color: #ffffff;
+      }
+
+      .button-container {
+         position: absolute;
+         bottom: 40px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 100%;
+      }
+
+      .button {
+         width: auto;
+         font-size: 20px;
+         color: #739340;
+         background: #ffffff;
+         padding: 5px 10px 0px 10px;
+         border-radius: 2px;
+
+      }
+
+      #stage:hover .button {
+         background: #000000;
+         color: #ffffff;
+      }
+
+      .slideClick {
+         width: 25px;
+         height: 260px;
+         position: absolute;
+         top: 250px;
+         display: table;
+      }
+
+      #slideClickRight {
+         right: 0px;
+      }
+
+      #exitClick {
+         top: 0px;
+         left: 0px;
+      }
+
+      .chevron {
+         display: table-cell;
+         color: white;
+         font-size: 50px;
+         vertical-align: middle;
+         text-align: center;
+         text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.33);
+      }
+
+      .slideClick:hover .chevron {
+         color: #A31118;
+
+      }
+   </style>
+</head>
+
+<body>
+   <div id="stage">
+      <div class="product-slider" id="productSlider">
+         <div class="product-container">
+            <img class="product" id="dynamic_product"  />
+            <div class="korting" id="dynamic_korting">-10%</div>
+         </div>
+      </div>
+      <div class="button-container">
+         <div class="button" id="dynamic_CTA">BUY NOW</div>
+      </div>
+      <div class="gradient-overlay"></div>
+      <div class="text-legal" id="dynamic_legal">L’abus d’alcool est dangereux pour la santé. À consommer avec
+         modération.</div>
+      <div class="text-container">
+         <div class="text-1" id="dynamic_text"><mark>Lorem ipsum dolor sit amet!</mark></div>
+      </div>
+      <img src="flow.png" class="flow full" />
+      <div class="logo">
+         <?xml version="1.0" encoding="utf-8"?>
+         <!-- Generator: Adobe Illustrator 25.4.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 600 150" style="enable-background:new 0 0 600 150;" xml:space="preserve">
+            <style type="text/css">
+               .st0 {
+                  clip-path: url(#SVGID_00000145042890586705450130000011315739675203755948_);
+               }
+
+               .st1 {
+                  fill: #202020;
+               }
+            </style>
+            <g id="Group_14" transform="translate(0 0)">
+               <g>
+                  <defs>
+                     <rect id="SVGID_1_" x="16.81" y="17.76" width="566.19" height="113.89" />
+                  </defs>
+                  <clipPath id="SVGID_00000072969787478821382230000011873466261330639261_">
+                     <use xlink:href="#SVGID_1_" style="overflow:visible;" />
+                  </clipPath>
+
+                  <g id="Group_13" transform="translate(0 0)"
+                     style="clip-path:url(#SVGID_00000072969787478821382230000011873466261330639261_);">
+                     <path id="Path_2" class="st1" d="M160.87,58.95c4.94-1.74,7.95-6.75,7.16-11.93c0-10.28-4.91-13.99-16.6-13.99h-25.88l3.86,10.31
+                     h5.11v61.49h17.63c11.78,0,17.14-6.23,17.14-17.74V73.24C169.83,67.17,166.45,61.42,160.87,58.95 M145.74,43.36h5.4
+                     c4,0,5.64,0.76,5.64,5.63c0,4.15-2.95,5.59-6.67,5.59h-4.37L145.74,43.36z M158.01,87.43c0,5.33-2.08,7.08-5.89,7.08h-6.38V64.9
+                     h4.98c5.13,0,7.31,2.05,7.31,8.71L158.01,87.43z" />
+                     <path id="Path_3" class="st1" d="M65.93,102c-6.57,0-8.08,0.82-8.08,2.09c0.25,4.52,3.61,8.26,8.08,8.98
+                     c4.48-0.72,7.84-4.48,8.08-9c0-1.27-1.51-2.09-8.08-2.09" />
+                     <path id="Path_4" class="st1"
+                        d="M76.23,65.23c-1.58,1.78-2.16,3.77-4.53,7.31c2.3-0.66,4.63-1.18,6.99-1.58
+                     c2.81-0.63,4.57-3.41,3.95-6.22c-0.06-0.28-0.15-0.56-0.26-0.82l4.81-3.33C83.23,61.28,79.49,62.87,76.23,65.23" />
+                     <path id="Path_5" class="st1" d="M101.37,33.87c0.29-6.67-3.25-12.92-9.11-16.11l-4.91,5.89c-13.53-6.54-29.3-6.54-42.83,0
+                     l-4.91-5.89c-5.86,3.19-9.4,9.44-9.12,16.11C21.7,43,16.79,55.2,16.81,67.88c0,20.53,20.18,48.21,30.38,50.21
+                     c-3.24-3.89-2.27-5.65,2.74-2.72c7.59,4.44,12.87,12.52,11.96,16.06c1.96,0.77,7.34-0.17,13.11-8.66
+                     c5.21-7.65,6.67-3.21,4.73,0.52c4.28-2.12,7.98-5.24,10.8-9.09c1.6-2.31,2.84-2.43,1.88,0.56c10.9-7.56,22.63-29.29,22.63-46.89
+                     C115.07,55.19,110.17,43,101.37,33.87 M92.98,23.6c2.56,2.46,4.02,5.86,4.05,9.41C97.68,43.6,95.77,52.56,99,59.89
+                     c-6.33-4.05-7.58-9.29-6.71-19.81c0.38-4.57-0.21-5.4-1.56-2.49c-0.73,1.66-1.62,3.25-2.66,4.74c-3.65-1.29-7.68-1.07-11.16,0.63
+                     L93,23.6 M34.83,33.02c0.03-3.56,1.5-6.95,4.07-9.41l16.07,19.36c-3.48-1.7-7.51-1.93-11.16-0.63c-1.04-1.49-1.92-3.08-2.66-4.74
+                     c-1.35-2.91-1.94-2.07-1.56,2.49c0.87,10.51-0.38,15.76-6.71,19.81c3.21-7.34,1.3-16.29,1.96-26.88 M90.92,86.29
+                     c-6.22,1-11,6.04-11.65,12.3c-0.56,4.11-1.97,8.06-4.12,11.61c-2.3,2.72-5.64,4.35-9.2,4.49c-3.56-0.14-6.9-1.77-9.2-4.49
+                     c-2.15-3.55-3.56-7.5-4.12-11.61c-0.66-6.27-5.44-11.31-11.67-12.3c-8.94-1.21-11.61-3.51-12.93-6.67
+                     c1.88,0.74,3.92,0.99,5.93,0.72c-3.83-2.21-6.5-5.98-7.34-10.32c11.25,0,19.87-26.18,39.31-26.18s28.05,26.18,39.31,26.18
+                     c-0.83,4.34-3.51,8.1-7.34,10.31c2,0.27,4.05,0.03,5.93-0.72c-1.32,3.19-3.98,5.49-12.93,6.7" />
+                     <path id="Path_6" class="st1" d="M55.65,65.23c-3.25-2.35-7-3.94-10.95-4.65l4.81,3.33c-1.08,2.67,0.2,5.7,2.86,6.79
+                     c0.27,0.11,0.54,0.19,0.82,0.26c2.35,0.4,4.69,0.93,6.98,1.58C57.81,68.99,57.23,67,55.65,65.23" />
+                     <path id="Path_7" class="st1" d="M176.96,100.25c0,2.53,2.05,4.58,4.58,4.58h26.2V94.51h-19.56V64.91h13.55V54.6h-13.55V43.37
+                     h19.56V33.06h-30.77V100.25z" />
+                     <path id="Path_8" class="st1" d="M451,97.13c-2.38,0-4.31,1.93-4.31,4.31c0,2.38,1.93,4.31,4.31,4.31c2.38,0,4.31-1.93,4.31-4.31
+                     c0,0,0,0,0,0C455.31,99.06,453.38,97.13,451,97.13" />
+                     <path id="Path_9" class="st1" d="M531.98,73.47c-1.67-1.71-3.68-3.07-5.89-3.98c-4.85-1.92-10.24-1.92-15.09,0
+                     c-2.21,0.91-4.22,2.26-5.89,3.98c-1.66,1.72-2.97,3.75-3.85,5.98c-1.86,4.79-1.86,10.1,0,14.89c0.88,2.22,2.19,4.25,3.85,5.98
+                     c1.67,1.71,3.68,3.07,5.89,3.98c4.85,1.92,10.24,1.92,15.09,0c2.21-0.91,4.22-2.26,5.89-3.98c1.66-1.72,2.97-3.75,3.85-5.98
+                     c1.86-4.79,1.86-10.1,0-14.89C534.95,77.23,533.64,75.2,531.98,73.47 M531.09,92.44c-0.6,1.68-1.53,3.22-2.73,4.53
+                     c-5.06,5.42-13.56,5.72-18.98,0.66c-0.23-0.21-0.45-0.43-0.66-0.66c-1.2-1.32-2.13-2.86-2.73-4.53c-1.28-3.59-1.28-7.51,0-11.09
+                     c0.6-1.68,1.53-3.22,2.73-4.53c5.06-5.42,13.56-5.72,18.98-0.66c0.23,0.21,0.45,0.43,0.66,0.66c1.2,1.32,2.13,2.86,2.73,4.53
+                     C532.38,84.93,532.38,88.85,531.09,92.44" />
+                     <path id="Path_10" class="st1" d="M575.76,68.97l-11.29,27.15h-0.2l-11.4-27.15h-7.24v35.84h4.86V75.35h0.1l12.1,29.46h3.24
+                     l12.1-29.46h0.1v29.46H583V68.97H575.76z" />
+                     <path id="Path_11" class="st1"
+                        d="M487.14,99.91c-1.67,0.87-3.52,1.31-5.4,1.27c-1.93,0.03-3.85-0.35-5.62-1.11
+                     c-1.6-0.7-3.03-1.74-4.2-3.04c-1.16-1.3-2.05-2.82-2.63-4.46c-0.61-1.72-0.92-3.54-0.91-5.37c-0.01-1.94,0.32-3.87,0.98-5.7
+                     c0.6-1.7,1.52-3.28,2.71-4.63c1.17-1.32,2.6-2.38,4.2-3.11c1.73-0.78,3.6-1.17,5.49-1.14c1.66,0,3.3,0.36,4.81,1.06
+                     c1.51,0.68,2.84,1.72,3.85,3.04l4.05-3.09c-1.45-1.89-3.38-3.34-5.59-4.2c-2.21-0.9-4.58-1.37-6.97-1.37
+                     c-2.6-0.03-5.18,0.45-7.6,1.42c-2.22,0.9-4.23,2.25-5.89,3.98c-1.67,1.75-2.97,3.82-3.82,6.08c-0.93,2.45-1.39,5.05-1.36,7.67
+                     c-0.01,7.25,4.19,13.85,10.76,16.91c2.4,1.11,5.03,1.66,7.67,1.62c1.85,0.03,3.68-0.23,5.44-0.79c1.41-0.45,2.76-1.06,4.03-1.82
+                     c0.97-0.58,1.88-1.28,2.69-2.08c0.51-0.5,0.98-1.03,1.41-1.6l-4.1-3.09c-1.02,1.47-2.36,2.68-3.93,3.54" />
+                     <path id="Path_12" class="st1"
+                        d="M400.29,33.05h-11.21v67.2c0,2.53,2.05,4.58,4.58,4.58l0,0h23.87V94.51h-17.22L400.29,33.05z" />
+                     <path id="Path_13" class="st1" d="M422.62,37.62v67.2h11.22V64.9h13.55V54.59h-13.55V43.37h18.66l3.86-10.31H427.2
+                     C424.67,33.06,422.62,35.1,422.62,37.62C422.62,37.63,422.62,37.63,422.62,37.62" />
+                     <path id="Path_14" class="st1" d="M369.6,88.4c0,5.13-2.45,7-6.15,7s-6.15-1.87-6.15-7V33.05H346.1v54.64
+                     c0,11.48,6.44,18.03,17.36,18.03s17.36-6.55,17.36-18.03V33.05H369.6V88.4z" />
+                     <path id="Path_15" class="st1" d="M214.87,100.25c0,2.53,2.05,4.58,4.58,4.58h26.2V94.51h-19.56V64.91h13.55V54.6h-13.55V43.37
+                     h19.56V33.06h-30.77V100.25z" />
+                     <path id="Path_16" class="st1" d="M279.76,58.95c4.94-1.74,7.94-6.74,7.16-11.92c0-10.28-4.91-13.99-16.6-13.99h-16.91v71.78
+                     h11.21V64.9h4.98c5.13,0,7.31,2.05,7.31,8.71v26.64c0,2.53,2.05,4.58,4.58,4.58h6.68V73.24
+                     C288.74,67.16,285.35,61.41,279.76,58.95 M269,54.58h-4.37V43.36h5.4c4,0,5.64,0.76,5.64,5.63
+                     C275.67,53.14,272.73,54.58,269,54.58" />
+                     <path id="Path_17" class="st1" d="M326.92,70.53c0,4.42,0.4,9.66,0.27,14.45c-1.85-11.5-4.55-19.17-6.81-30.4h-7.86
+                     c-2.25,11.22-4.96,18.9-6.81,30.4c-0.12-4.79,0.27-10.04,0.27-14.45c0-12.87-0.46-24.11-0.57-37.48H294.4l3.2,67.42
+                     c0.12,2.44,2.13,4.35,4.57,4.36h4.09c1.03,0.01,1.93-0.67,2.2-1.66c3.84-11.26,6.52-22.89,8.01-34.7
+                     c1.49,11.81,4.17,23.43,8.01,34.7c0.27,0.99,1.17,1.67,2.2,1.66h4.09c2.44,0,4.45-1.92,4.57-4.36l3.21-67.42H327.5
+                     c-0.1,13.37-0.56,24.61-0.56,37.48" />
+                  </g>
+               </g>
+            </g>
+         </svg>
+      </div>
+      <div id="exitClick" class="full"></div>
+      <div class="slideClick" id="slideClickLeft">
+         <div class="chevron chevron-left">&#8249;</div>
+      </div>
+      <div class="slideClick" id="slideClickRight">
+         <div class="chevron chevron-right">&#8250;</div>
+      </div>
+
+      <div class="border"></div>
+
+   </div>
+</body>
+<script>
+
+
+   var boilerplate = {};
+   var tl = new TimelineMax({});
+   var tl2 = new TimelineMax({});
+   var imageWidth = 180;
+   var numProducts = 5;
+   var activeProduct = 1;
+   var dyGlobal = {};
+
+   boilerplate.loadFunction = function () {
+      if (Enabler.isInitialized()) {
+         init();
+      } else {
+         Enabler.addEventListener(studio.events.StudioEvent.INIT, init)
+      }
+   }
+
+   function init() {
+      if (Enabler.isPageLoaded()) {
+         boilerplate.processAd();
+      } else {
+         Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, boilerplate.processAd);
+      }
+   }
+
+   boilerplate.processAd = function () {
+      boilerplate.DynamicContentElements();
+   }
+
+   boilerplate.DynamicContentElements = function () {
+      var mouseOverComplete = false;
+
+      // //mouse over action
+      // function mouseOverFunction() {
+      //    TweenMax.to('.btn-cta-1, .btn-cta-2', 0.3, {
+      //       scale: 1.05,
+      //       backgroundColor: "#000000"
+      //    });
+      // };
+      // //mouse out action
+      // function mouseOutFunction() {
+      //    TweenMax.to('.btn-cta-1, .btn-cta-2', 0.3, {
+      //       scale: 1,
+      //       backgroundColor: "#ffffff"
+      //    });
+      // };
+
+      // document.getElementById("stage").addEventListener("mouseover", mouseOverFunction, false);
+      // document.getElementById("stage").addEventListener("mouseout", mouseOutFunction, false);
+
+      Enabler.setProfileId(10552683);
+      var devDynamicContent = {};
+
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention = [{}];
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0]._id = 0;
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].unique_id = 1;
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].reporting_label = "1_uk_prospecting__beerwulf_sub";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].is_default = true;
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].is_active = true;
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].start_date = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].start_date.RawValue = "01/01/2022";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].start_date.UtcValue = 1640995200000;
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].end_date = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].end_date.RawValue = "10/10/2022";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].end_date.UtcValue = 1665360000000;
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].Version = 1;
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].Brand = "Beerwulf";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].campaign = "Prospecting";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].cta = "BUY NOW";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].legal = "Enjoy responsibly";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].text = "Pour refreshing pints at home";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].text1 = "You\'ve earned it";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].img1 = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].img1.Type = "file";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].img1.Url = "https://s0.2mdn.net/ads/richmedia/studio/60019211/60019211_20220926044843706_sub1.jpeg";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].img2 = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].img2.Type = "file";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].img2.Url = "https://s0.2mdn.net/ads/richmedia/studio/60019211/60019211_20220926044847062_sub2.jpg";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod.Type = "file";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod.Url = "https://s0.2mdn.net/ads/richmedia/studio/60019211/60019211_20220920090657315_product.png";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod2 = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod2.Type = "file";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod2.Url = "https://s0.2mdn.net/ads/richmedia/studio/60019211/60019211_20220928070405884_product2.png";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod3 = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod3.Type = "file";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod3.Url = "https://s0.2mdn.net/ads/richmedia/studio/60019211/60019211_20220928070411613_product3.png";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod4 = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod4.Type = "file";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod4.Url = "https://s0.2mdn.net/ads/richmedia/studio/60019211/60019211_20220927025128506_blade_affligem.png";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod5 = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod5.Type = "file";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].prod5.Url = "https://s0.2mdn.net/ads/richmedia/studio/60019211/60019211_20220927024859984_blade_desperados.png";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].korting = "-25%";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].korting2 = "-25%";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].korting3 = "-25%";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].korting4 = "-25%";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].korting5 = "-25%";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].Reporting_1 = "";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].Reporting_2 = "Sub";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].exit_url = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].exit_url.Url = "https://www.beerwulf.com/en-gb/the-sub?utm_source=dv360&utm_medium=display&utm_campaign=dv360_uk_ca_ao_sub_pro";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].exit_url2 = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].exit_url2.Url = "https://www.beerwulf.com/";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].exit_url3 = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].exit_url3.Url = "https://www.google.com/";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].exit_url4 = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].exit_url4.Url = "https://www.google.com/doubleclick/studio/#ContentManagement:";
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].exit_url5 = {};
+      devDynamicContent.Beerwulf_UK_Prospecting__Retention[0].exit_url5.Url = "https://www.google.co.in/";
+      Enabler.setDevDynamicContent(devDynamicContent);
+
+      dyGlobal = dynamicContent.Beerwulf_UK_Prospecting__Retention[0];
+      dynamic_CTA.innerHTML = dyGlobal.cta;
+   dynamic_legal.innerHTML = dyGlobal.legal;
+   dynamic_text.innerHTML = `<mark>${dyGlobal.text}</mark>`;
+
+      document.getElementById("slideClickLeft").addEventListener('click', function () { clicked(), productSlide(activeProduct, 'left') });
+      document.getElementById("slideClickRight").addEventListener('click', function () { clicked(), productSlide(activeProduct, 'right') });
+      document.getElementById("exitClick").addEventListener('click', function () { exitClick(activeProduct) });
+
+      document.getElementById("productSlider").style.width = numProducts * imageWidth + "px";
+      document.getElementById("productSlider").innerHTML = "";
+
+      for (i = 0; i < numProducts; i++) {
+         let discountString = (i == 0) ? "korting" : `korting${parseInt(i) + 1}`;
+         let productString = (i == 0) ? "prod" : `prod${parseInt(i) + 1}`;
+
+         if (dyGlobal[discountString] != "") {
+            document.getElementById("productSlider").innerHTML = document.getElementById("productSlider").innerHTML + '<div class="product-container"><img class="product" id="dynamic_product" src="' + dyGlobal[productString].Url + '" /><div class="korting" id="dynamic_korting">' + dyGlobal[discountString] + '</div></div>';
+         } else {
+            document.getElementById("productSlider").innerHTML = document.getElementById("productSlider").innerHTML + '<div class="product-container"><img class="product" id="dynamic_product" src="' + dyGlobal[productString].Url + '" /></div>';
+         }
+      }
+
+      boilerplate.executeAnimation();
+      
+
+   }
+
+   boilerplate.executeAnimation = function () {
+      
+      var tl = new TimelineMax({});
+      var tl2 = new TimelineMax({});
+      tl.set('#stage', {
+         opacity: 1
+      })
+
+      tl.to('.flow', 1.2, {
+         y: -637,
+         ease: "sine.inOut",
+         transformOrigin: "50% 80%" 
+      }, "+=0.5");
+
+      tl.to('.logo', 1.2, {
+         y: -285,
+         x: -85,
+         ease: "sine.inOut",
+         transformOrigin: "50% 80%"
+      }, "-=1.2");
+      tl.from('.product', 1, {
+         x: '100%',
+         ease: "sine.inOut",
+         transformOrigin: "50% 80%"
+      }, "-=1.5");
+      tl.from('.korting', 1, {
+         x: '200%',
+         ease: "sine.inOut",
+         transformOrigin: "50% 80%"
+      }, "-=1.5");
+      tl.from('.chevron', 1, {
+         opacity: 0,
+         ease: "sine.inOut",
+         transformOrigin: "50% 80%"
+      }, "-=1");
+
+      tl.to('.button', 0.2, {
+         scale: 1.05,
+         ease: Back.easeOut.config(1)
+      }, '+=0.5')
+      tl.to('.button', 0.3, {
+         scale: 1,
+         ease: Back.easeOut.config(1)
+      }, '-=0')
+
+
+      // function stopAnimation() {
+      //    var loop = 0;
+      //    if (loop == 1) {
+      //       tl.pause();
+      //    }
+      // }
+
+      tl2.add(productSlide, '+=4');
+      tl2.add(productSlide, '+=4');
+      tl2.add(productSlide, '+=4');
+      tl2.add(productSlide, '+=4');
+      tl2.add(productSlide, '+=4');
+      tl2.add(productSlide, '+=4');
+   }
+
+   function productSlide(productNumber, direction) {
+      if (activeProduct >= numProducts && direction == 'right') {
+         activeProduct = 1;
+      } else if (activeProduct <= 1 && direction == 'left') {
+         activeProduct = numProducts;
+      } else if (direction == 'left') {
+         activeProduct--
+      } else if (activeProduct == numProducts) {
+         activeProduct = 1;
+      } else {
+         activeProduct++;
+      }
+      console.log(activeProduct);
+
+      TweenMax.to("#productSlider", 0.75, { x: ((activeProduct - 1) * -imageWidth), ease: Power3.easeOut });
+
+   }
+
+   function clicked() {
+      tl2.pause();
+      document.getElementById("slideClickLeft").style.pointerEvents = "none";
+      document.getElementById("slideClickRight").style.pointerEvents = "none";
+      setTimeout(function () {
+         document.getElementById("slideClickLeft").style.pointerEvents = "auto";
+         document.getElementById("slideClickRight").style.pointerEvents = "auto";
+      }, 500);
+   }
+
+   function exitClick(num) {
+      let exitClickString = (num == 1) ? "exit_url" : `exit_url${parseInt(num)}`;
+      debugger;
+      Enabler.exitOverride('Exit', dyGlobal[exitClickString].Url);
+   }
+
+
+
+   window.onload = function () {
+      boilerplate.loadFunction();
+   }
+</script>
+
+</html>

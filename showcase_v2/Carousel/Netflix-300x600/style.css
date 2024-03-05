@@ -1,0 +1,193 @@
+body, body * {
+    margin: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.maincontainer {
+    width: 300px;
+    height: 600px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0;
+    display: none;
+}
+
+.pos {
+    position: absolute;
+}
+
+.leftarrowbar {
+    left: 0;
+    height: 100%;
+    width: 30px;
+}
+
+.rightarrowbar {
+    right: 0;
+    height: 100%;
+    width: 30px;
+}
+
+.arrows {
+    color: #fff;
+    font-size: 40px;
+    /*! font-weight: bold; */
+    line-height: 1;
+    /*! top: 40%; */
+    left: 3px;
+}
+
+#leftarrowbar {
+    bottom: 170px;
+}
+
+#rightarrowbar {
+    right: 0;
+    bottom: 170px;
+}
+
+.arrowbar {
+    background-color: rgba(0, 0, 0, 1);
+    height: 50px;
+    width: 20px;
+    bottom: 18px;
+}
+
+#maincontainer {
+}
+
+#cardcontainer {
+    transform: translateX(0);
+}
+#card1 {
+    transform-origin: 0% 0%;
+    margin-left: 10px;
+}
+#card6 {
+    /*! transform-origin: 0% 0%; */
+    /*! margin-left: 10px; */
+    transform-origin: 100% 0%;
+}
+
+#card6 {
+    /*! margin-left: 56px; */
+}
+#card2 {
+    transform-origin: 100% 0%;
+}
+#card10 {
+    transform-origin: 100% 100%;
+}
+#card5 {
+    transform-origin: 0% 0%;
+}
+.cardcontainer {
+    height: 100%;
+    width: 850px;
+    left: -8px;
+    bottom: 0;
+    top: 0; 
+}
+
+.cards {
+    height: 172px;
+    width: 126px;
+    margin: 0px 5px 5px 0px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    transform-origin: 0% 0%;
+    z-index: 2;
+}
+
+.cardimgs {
+    width: 100%;
+    height: 100%;
+}
+#card11 {
+    transform-origin: 0% 100%;
+}
+#card12 {
+    transform-origin: 100% 100%;
+}
+#card8 {
+    transform-origin: 100% 100%;
+}
+#card4 {
+    transform-origin: 100% 0%;
+}
+#card9 {
+    transform-origin: 0% 100%;
+}
+#card7 {
+    transform-origin: 0% 100%;
+    margin-left: 10px;
+}
+.titlecopies {
+    color: #fff;
+    bottom: 38px;
+    font-size: 16px;
+    left: 7px;
+    font-weight: bold;
+}
+
+.seasoncopies {
+    color: #fff;
+    bottom: 20px;
+    font-size: 10px;
+    left: 7px;
+}
+
+.typecopies {
+    color: #fff;
+    bottom: 6px;
+    font-size: 9px;
+    left: 7px;
+}
+ 
+.playparents {
+    bottom: 76px;
+    left: 7px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.playicon {
+}
+
+.gradients {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgb(0, 0, 1));
+    opacity: 0;
+}
+
+.elementsholders {
+    opacity: 0;
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+}
+
+.playicons {
+    color: #fff;
+    left: 11px;
+    top: 7px;
+}
+.videocontainer{width: 262px;height: 140px;left: 10px;top: 66px;left: 0;right: 0;margin: 0 auto;}
+video{width: 100%;height: 100%;}
+.logoparent{width: 96px;height: 30px;left: 0;right: 0;margin: 0 auto;top: 24px;}
+.logo{max-width: 100%;max-height: 100%;}
+.maincardcontainer{width: 262px;height: 350px;overflow: hidden;left: 0;right: 0;margin: 0 auto;bottom: 18px;}
+.adcontainer{width: 300px; height: 600px; left:-1px; top: -1px;overflow: hidden;}
+.arrowbarin{height:350px;}
+#leftarrowbarin{left: 0; }
+#rightarrowbarin{right:0;}

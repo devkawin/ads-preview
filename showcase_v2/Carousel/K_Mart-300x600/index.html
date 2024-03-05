@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-xtLayoutMetrics" content="gdi"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>300x600</title>
+        <meta name="ad.size" content="width=300,height=6000">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/gsap.min.js"></script>
+    </head>
+    <body class="main-img-full">
+        <ft-default id="adwrapper" class= "border" clicktag="1">
+            <div id="click_element"></div>
+            <div id="frame1" class="abs fullScreen">
+                <img name="bg_img" id="bg" class="abs imgs fullScreen"/>
+                <ft-dynamic name="headline_txt" class="abs f1Text transformcommon" id="headline_txt"></ft-dynamic>
+                <ft-dynamic name="subHeadline_txt" class="abs f1Text transformcommon" id="subHeadline_txt"></ft-dynamic>
+                
+            </div>
+            
+            <div id="carouselSec" class="carouselSec">
+                
+                <div id="frame2" class=" frame2">
+                    
+                    <ft-carousel id="carousel" class= "" transition = "horizontal 500ms"  alwaysshownav enabletouch >
+                        <ft-slide class= "abs" displaytime="4s">
+                            <ft-dynamic name="prodPrice1" id="prodPrice1" class="abs prodPrice"></ft-dynamic>
+                            <ft-dynamic name="prodImg1" id="prodImg1" class="abs imgs prodImg transformcommon"></ft-dynamic>
+                            <div id="priceBg1" class="abs priceBg"></div>
+                            <ft-dynamic name="prodName1" id="prodName1" class="abs prodName"></ft-dynamic>
+                            <ft-dynamic name="prodDesc1" id="prodDesc1" class="abs prodDesc"></ft-dynamic>
+                        </ft-slide>
+
+                        <ft-slide class= "abs">
+                            <ft-dynamic name="prodPrice2" id="prodPrice2" class="abs prodPrice"></ft-dynamic> 
+                            <ft-dynamic name="prodImg2" id="prodImg2" class="abs imgs prodImg transformcommon"></ft-dynamic>
+                            <div id="priceBg2" class="abs priceBg"></div>
+                            <ft-dynamic name="prodName2" id="prodName2" class="abs prodName"></ft-dynamic>
+                            <ft-dynamic name="prodDesc2" id="prodDesc2" class="abs prodDesc"></ft-dynamic>
+                        </ft-slide>
+
+                        <ft-slide class= "abs">
+                            <ft-dynamic name="prodPrice3" id="prodPrice3" class="abs prodPrice"></ft-dynamic>
+                            <ft-dynamic name="prodImg3" id="prodImg3" class="abs imgs prodImg transformcommon"></ft-dynamic>   
+                            <div id="priceBg3" class="abs priceBg"></div>
+                            <ft-dynamic name="prodName3" id="prodName3" class="abs prodName"></ft-dynamic>
+                            <ft-dynamic name="prodDesc3" id="prodDesc3" class="abs prodDesc"></ft-dynamic>
+                        </ft-slide>
+
+                        <ft-slide class= "abs">
+                            <ft-dynamic name="prodPrice4" id="prodPrice4" class="abs prodPrice"></ft-dynamic>
+                            <ft-dynamic name="prodImg4" id="prodImg4" class="abs imgs prodImg transformcommon"></ft-dynamic> 
+                            <div id="priceBg4" class="abs priceBg"></div>
+                            <ft-dynamic name="prodName4" id="prodName4" class="abs prodName"></ft-dynamic>
+                            <ft-dynamic name="prodDesc4" id="prodDesc4" class="abs prodDesc"></ft-dynamic>
+                        </ft-slide>
+
+                        <ft-slide-nav id="left" class="abs imgs" direction="left" style="left: 12px; top: 42%;"><img class="imgs" src="images/arrowL.png"/> </ft-slide-nav>
+                        <ft-slide-nav id="right" class="abs imgs" direction="right" style="right: 12px; top: 42%;"> <img class="imgs" src="images/arrowR.png"/>  </ft-slide-nav>
+                    </ft-carousel>
+                    
+                </div>
+            </div>
+            
+            <div id="footer" class="abs bottomSec ">
+               <!--  <img name="bg2_img" id="bg2" class="abs imgs fullScreen"/>  -->
+                <ft-dynamic name="logo" id="logo" class="abs imgs"></ft-dynamic>
+                <ft-dynamic name="cta_txt" id="cta" class="cta abs"></ft-dynamic>    
+            </div>
+            
+        </ft-default>
+        <script src="https://cdn.flashtalking.com/frameworks/js/api/2/10/html5API.js"></script>
+        <script src="js/scripts.js"></script>
+        <!-- <div class="bk"><img src="F2.jpg"> </div>
+        <div class="bk1"><img src="F2.jpg"> </div> -->
+    </body>
+</html>
