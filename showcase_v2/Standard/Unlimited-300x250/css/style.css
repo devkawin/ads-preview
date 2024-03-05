@@ -1,0 +1,63 @@
+@font-face{
+	font-family: AvenirLight;
+	src: url("../fonts/AvenirLTStd-Light.woff");
+}
+
+#container{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:300px;
+	height:250px;
+	border:1px solid black;
+	box-sizing: border-box;
+	overflow:hidden;
+	opacity:0;
+	z-index:1;
+}
+
+#background_img{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:300px;
+	height:250px;
+}
+
+#logo{
+	position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+#cta{
+	position: absolute;
+ 	background-image: url("../images/CTA_sprite.jpg");
+ 	background-position: 0px 0px;
+ 	width:129px;
+ 	height:33px;
+    bottom: 30px;
+    left: 15px;
+}
+
+#cta:hover{
+	 background-position: 0px 33px;
+}
+
+#headline{
+	position:absolute;
+	top:90px;
+	left:10px;
+	color:white;
+	font-family:AvenirLight;
+	font-size:28px;
+}
+
+#sub_headline{
+	position:absolute;
+	top:120px;
+	left:10px;
+	color:white;
+	font-family:AvenirLight;
+	font-size:19px;
+}

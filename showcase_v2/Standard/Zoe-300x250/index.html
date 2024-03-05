@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Flashtalking Dynamic Ad using Custom Elements</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<!--
+			Flashtalking Custom Element Documentation:
+			https://flashtalkingsupport.zendesk.com/hc/en-us/sections/360000054268-JS-Docs-2-10-Elements
+		-->
+		<ft-default>
+			<ft-dynamic name="background_img"></ft-dynamic>
+			<div id="rectangle"></div>
+			<ft-dynamic name="logo_img"></ft-dynamic>
+			<img id="cta" src="images/cta.jpg"/>
+			<ft-dynamic name="product_img"></ft-dynamic>
+			<ft-dynamic name="headline_txt" class="text"></ft-dynamic>
+			<ft-dynamic name="subHeadline_txt" class="text"></ft-dynamic>
+		</ft-default>
+
+		<!-- 
+			Flashtalking HTML5 API Documentation:
+			https://flashtalkingsupport.zendesk.com/hc/en-us/articles/360000616047-Class-FT  
+		-->
+		<script src="https://cdn.flashtalking.com/frameworks/js/api/2/10/html5API.js"></script>
+		<script>
+			var container = myFT.$("ft-default");
+
+			/**
+			 * After the Flashtalking Dynamic Ads version data has finished loading, the 'instantads' event is dispatched.
+			 * The callback function initiates the content update for dynamic elements with values from the manifest.js file.
+			*/
+			myFT.on('instantads', function() {
+
+				// Add dynamic clickTag
+				container.on('click', function() {
+					myFT.clickTag(1, myFT.instantAds.clickTag1_url);
+				});
+
+				start();
+			});
+
+			function start() { 
+				// Animate fade in
+				container[0].style.transition = "opacity 1s";
+				container[0].style.opacity = 1;
+				myFT.$("ft-dynamic")[0].classList.add('animate');
+			};
+		</script>
+	</body>
+</html>

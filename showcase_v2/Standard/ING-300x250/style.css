@@ -1,0 +1,102 @@
+#creative_container #banner #logo {
+  background-size: cover;
+}
+#creative_container #banner #logoBorder {
+  fill: none;
+  stroke: white;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+#creative_container #banner #disclaimerPancake {
+  transform: will-change;
+}
+#creative_container #banner #disclaimerBg {
+  width: 100%;
+  border: 1px #000000 solid;
+  box-sizing: border-box;
+  background: none;
+  background-color: white;
+}
+#creative_container #banner #disclaimerImage {
+  background-size: cover;
+}
+#creative_container #banner #investDisclaimerBg {
+  /* border: 1px solid #FF6600; */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+#creative_container #banner #introImage {
+  background-size: cover;
+}
+#creative_container #banner #endBg {
+  background: none;
+}
+#creative_container #banner .copyLines {
+  width: auto;
+  display: inline-block;
+  white-space: nowrap;
+  color: white;
+  border-radius: 3px 3px 3px 3px;
+}
+#creative_container #banner .copyGroup {
+  width: auto;
+  overflow: hidden;
+}
+#creative_container #banner #endTitle .copyLines {
+  padding: 0;
+  background-color: 'red';
+}
+#creative_container #banner .ctaBgContainer {
+  opacity: 0;
+}
+#creative_container #banner .cta {
+  will-change: transform;
+  width: auto;
+  height: 40px;
+  display: inline-block;
+  bottom: 20px;
+  line-height: 40px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#creative_container #banner .cta .ctaInner {
+  overflow: hidden;
+  width: auto;
+}
+#creative_container #banner .cta .ctaInner .ctaCopy {
+  width: auto;
+  white-space: nowrap;
+  margin-left: 15px;
+  margin-right: 40px;
+  will-change: transform;
+  color: white;
+  font-family: 'ING Me Bold';
+  font-style: normal;
+  font-weight: normal;
+  z-index: 9;
+}
+#creative_container #banner .cta .ctaInner .hider {
+  display: block;
+  width: 35px;
+  height: 40px;
+  right: 0;
+  position: absolute;
+  z-index: 10;
+}
+#creative_container #banner .cta .arrow {
+  will-change: transform;
+  position: absolute;
+  top: 3px;
+  bottom: 0;
+  left: auto;
+  right: 15px;
+  margin: auto;
+  z-index: 11;
+}
+#creative_container #banner video {
+  object-fit: fill;
+}

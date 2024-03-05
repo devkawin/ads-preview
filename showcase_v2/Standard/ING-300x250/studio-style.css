@@ -1,0 +1,328 @@
+/* .disclaimerImageRetina {
+  position: absolute;
+  width: 523px;
+  height: 46px;
+  left: -236px;
+  top: -7px;
+
+  background: url(52.png);
+  background-repeat: no-repeat;
+  background-size: 523px, 46px;
+} */
+.banner {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+
+.introImage {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+
+  background: url(17.png);
+  background-repeat: no-repeat;
+  background-size: 300px, 250px;
+}
+.title {
+  position: absolute;
+  width: 270px;
+  height: 210px;
+  left: 16px;
+  top: 11px;
+
+  letter-spacing: -0.001em;
+  text-align: left;
+  font-size: 18px;
+  line-height: 33px;
+  color: rgba(255, 255, 255, 1);
+  white-space: pre-wrap;
+  font-family: "ING Me Bold";
+  font-weight: normal;
+  font-style: normal;
+}
+.title2 {
+  position: absolute;
+  width: 270px;
+  height: 210px;
+  left: 16px;
+  top: 11px;
+
+  letter-spacing: -0.001em;
+  text-align: left;
+  font-size: 18px;
+  line-height: 33px;
+  color: rgba(255, 255, 255, 1);
+  white-space: pre-wrap;
+  font-family: "ING Me Bold";
+  font-weight: normal;
+  font-style: normal;
+}
+.endBg {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+
+  background-color: rgb(120, 86, 65);
+}
+.ctaContainer {
+  position: absolute;
+  width: 57px;
+  height: 60px;
+  left: 15px;
+  top: 170px;
+}
+
+.cta {
+  position: absolute;
+  width: 8px;
+  height: 15px;
+  left: 0px;
+  top: 27px;
+}
+
+.arrow {
+  position: absolute;
+  width: 8px;
+  height: 15px;
+  left: 0px;
+  top: 0px;
+
+  background: url(34.svg);
+  background-repeat: no-repeat;
+  background-size: 8px, 15px;
+}
+.ctaBgContainer {
+  position: absolute;
+  width: 57px;
+  height: 60px;
+  left: 0px;
+  top: 0px;
+
+  background: url(72.svg);
+  background-repeat: no-repeat;
+  background-size: 57px, 60px;
+}
+.logoBorder_container {
+  position: absolute;
+  width: 57px;
+  height: 57px;
+  left: 226px;
+  top: 171px;
+  background: transparent;
+}
+.logo {
+  position: absolute;
+  width: 57px;
+  height: 57px;
+  left: 226px;
+  top: 171px;
+}
+.subtitle {
+  position: absolute;
+  width: 271px;
+  height: 50px;
+  left: 16px;
+  top: 18px;
+
+  letter-spacing: -0.001em;
+  text-align: left;
+  font-size: 20px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 1);
+  white-space: pre-wrap;
+  font-family: "ING Me Regular";
+  font-weight: normal;
+  font-style: normal;
+}
+.endTitle {
+  position: absolute;
+  width: 271px;
+  height: 121px;
+  left: 16px;
+  top: 54px;
+
+  letter-spacing: -0.001em;
+  text-align: left;
+  font-size: 24px;
+  line-height: 26px;
+  color: rgba(255, 255, 255, 1);
+  white-space: pre-wrap;
+  font-family: "ING Me Bold";
+  font-weight: normal;
+  font-style: normal;
+}
+.disclaimer {
+  position: absolute;
+  width: 300px;
+  height: 40px;
+  left: 0px;
+  top: 0px;
+}
+
+.disclaimerBg {
+  position: absolute;
+  width: 300px;
+  height: 40px;
+  left: 0px;
+  top: 0px;
+
+  background: url(51.png);
+  background-repeat: no-repeat;
+  background-size: 300px, 40px;
+}
+/* .disclaimerImage {
+  position: absolute;
+  width: 273px;
+  height: 24px;
+  left: 14px;
+  top: 8px;
+
+  background: url(47.png);
+  background-repeat: no-repeat;
+  background-size: 273px, 24px;
+} */
+.investDisclaimer {
+  position: absolute;
+  width: 300px;
+  height: 65px;
+  left: 0px;
+  top: 185px;
+}
+
+.investDisclaimerBg {
+  position: absolute;
+  width: 300px;
+  height: 65px;
+  left: 0px;
+  top: 0px;
+
+  background: url(76.svg);
+  background-repeat: no-repeat;
+  background-size: 300px, 65px;
+}
+.investCopy {
+  position: absolute;
+  width: 271px;
+  height: 74px;
+  left: 15px;
+  top: 3px;
+
+  letter-spacing: -0.001em;
+  text-align: left;
+  font-size: 15px;
+  line-height: 19px;
+  color: rgba(255, 102, 0, 1);
+  white-space: pre-wrap;
+  font-family: "ING Me Regular";
+  font-weight: normal;
+  font-style: normal;
+}
+.sprintersDisclaimer {
+  position: absolute;
+  width: 300px;
+  height: 35px;
+  left: 0px;
+  top: 215px;
+}
+
+.investDisclaimerBg_copy1 {
+  position: absolute;
+  width: 300px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+
+  background: url(78.svg);
+  background-repeat: no-repeat;
+  background-size: 300px, 35px;
+}
+.investCopy_copy1 {
+  position: absolute;
+  width: 271px;
+  height: 22px;
+  left: 15px;
+  top: 5px;
+
+  letter-spacing: -0.001em;
+  text-align: left;
+  font-size: 10px;
+  line-height: 13px;
+  color: rgba(255, 102, 0, 1);
+  white-space: pre-wrap;
+  font-family: "ING Me Bold";
+  font-weight: normal;
+  font-style: normal;
+}
+.sprintersPancake {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+}
+
+.sprintersBg {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+
+  background-color: rgb(255, 102, 0);
+}
+/* .disclaimerPancake {
+  position: absolute;
+  width: 229px;
+  height: 229px;
+  left: 35px;
+  top: 10px;
+
+  background: url(83.png);
+  background-repeat: no-repeat;
+  background-size: 229px, 229px;
+} */
+.loading {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+
+  background-color: rgb(255, 102, 0);
+}
+.fallback {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+
+.fallbackBackground {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+
+  background-color: rgb(255, 255, 255);
+}
+.Vector_Smart_Object {
+  position: absolute;
+  width: 124px;
+  height: 160px;
+  left: 88px;
+  top: 45px;
+
+  background-repeat: no-repeat;
+  background-size: 124px, 160px;
+}

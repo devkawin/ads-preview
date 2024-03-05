@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="57" height="57" viewBox="0 0 57 57">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f5f1ee;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="logoBorder" class="cls-1" d="M244.351,170.993h25.516c4.878,0,13.133,1.881,13.133,13.543v30.3c0,4.891-1.876,13.168-13.508,13.168H239.126c-4.878,0-13.133-1.881-13.133-13.544v-30.3c0-4.891,1.876-13.167,13.508-13.167h24.015" transform="translate(-226 -171)"/>
+</svg>
